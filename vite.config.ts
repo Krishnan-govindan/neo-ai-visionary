@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/neo-ai-visionary/", // ✅ GitHub Pages project base
   server: {
     host: "::",
     port: 8080,
