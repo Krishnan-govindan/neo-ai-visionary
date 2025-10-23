@@ -22,11 +22,11 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Logo at Top */}
       <div className="absolute top-0 left-0 right-0 z-20 p-6">
-        <div className="container mx-auto flex justify-center">
+        <div className="container mx-auto flex justify-start">
           <img 
             src="/logo.png" 
             alt="fulsuccess" 
-            className="h-48 md:h-64 brightness-0 invert"
+            className="h-56 md:h-72 brightness-0 invert"
           />
         </div>
       </div>
