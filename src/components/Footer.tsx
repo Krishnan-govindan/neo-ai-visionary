@@ -1,4 +1,4 @@
-import { Brain, Linkedin, Youtube, Instagram, Calendar, Mail } from "lucide-react";
+import { Linkedin, Youtube, Instagram, Calendar, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -19,13 +19,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="relative">
-                <Brain className="w-10 h-10 text-primary" />
-                <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg animate-pulse" />
-              </div>
-              <h3 className="font-orbitron font-bold text-2xl text-gradient-primary">
-                AI Solutions
-              </h3>
+              <img src="/logo.png" alt="fulsuccess" className="h-12" />
             </div>
             
             <p className="text-muted-foreground leading-relaxed">
@@ -77,7 +71,8 @@ const Footer = () => {
                 'AI Video Editing',
                 'Blog Automation',
                 'Landing Pages',
-                'AI Brand Clone'
+                'AI Brand Clone',
+                'Chatbot Building'
               ].map((service, index) => (
                 <li key={index}>
                   <span className="text-muted-foreground hover:text-secondary transition-colors duration-300">
@@ -97,11 +92,11 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="mailto:hello@aisolutions.com"
+                href="mailto:contact@fulsuccess.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 <Mail className="w-4 h-4" />
-                <span className="text-sm">hello@aisolutions.com</span>
+                <span className="text-sm">contact@fulsuccess.com</span>
               </a>
             </div>
 
@@ -130,7 +125,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © 2024 AI Solutions. All rights reserved. Built with cutting-edge AI technology.
+            © 2024 fulsuccess. All rights reserved. Built with cutting-edge AI technology.
           </p>
           
           <div className="flex items-center gap-6 text-sm text-muted-foreground">

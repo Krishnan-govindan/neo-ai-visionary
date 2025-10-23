@@ -20,6 +20,13 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Logo at Top */}
+      <div className="absolute top-0 left-0 right-0 z-20 p-6">
+        <div className="container mx-auto">
+          <img src="/logo.png" alt="fulsuccess" className="h-12 md:h-16" />
+        </div>
+      </div>
+
       {/* Animated Background */}
       <div 
         className="absolute inset-0 opacity-30"

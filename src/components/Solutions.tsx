@@ -6,6 +6,7 @@ import {
   PenTool, 
   Video, 
   UserCheck,
+  MessageSquare,
   ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -59,6 +60,13 @@ const solutions = [
     description: "Personalized AI avatar and voice clone that represents your brand 24/7.",
     color: "neural",
     delay: "0.6s"
+  },
+  {
+    icon: MessageSquare,
+    title: "Chatbot Building",
+    description: "Intelligent AI chatbots that handle customer queries, boost engagement, and drive sales 24/7.",
+    color: "accent",
+    delay: "0.7s"
   }
 ];
 
