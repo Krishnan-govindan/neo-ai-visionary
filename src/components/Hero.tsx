@@ -22,7 +22,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Brand Name at Top */}
       <div className="absolute top-0 left-0 z-20 p-6">
-        <h2 className="font-orbitron font-bold text-4xl md:text-5xl text-gradient-primary">
+        <h2 className="font-orbitron font-bold text-4xl md:text-5xl text-white">
           fulsuccess
         </h2>
       </div>
