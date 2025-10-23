@@ -26,7 +26,7 @@ const Hero = () => {
           <img 
             src="/logo.png" 
             alt="fulsuccess" 
-            className="h-12 md:h-16 brightness-0 invert"
+            className="h-48 md:h-64 brightness-0 invert"
           />
         </div>
       </div>
