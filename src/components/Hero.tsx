@@ -22,8 +22,15 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Logo at Top */}
       <div className="absolute top-0 left-0 right-0 z-20 p-6">
-        <div className="container mx-auto">
-          <img src="/logo.png" alt="fulsuccess" className="h-12 md:h-16" />
+        <div className="container mx-auto flex items-center gap-4">
+          <img 
+            src="/logo.png" 
+            alt="fulsuccess" 
+            className="h-12 md:h-16 brightness-0 invert"
+          />
+          <span className="text-3xl md:text-4xl font-orbitron font-bold text-gradient-primary">
+            fulsuccess
+          </span>
         </div>
       </div>
 

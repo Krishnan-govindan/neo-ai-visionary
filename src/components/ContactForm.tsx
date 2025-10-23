@@ -80,19 +80,52 @@ const ContactForm = () => {
               />
             </div>
 
-            {/* WhatsApp Number Field */}
+            {/* WhatsApp Number Field with Country Code */}
             <div className="space-y-2">
-              <Label htmlFor="whatsapp" className="text-foreground font-semibold">
-                WhatsApp Number (with country code) *
+              <Label htmlFor="phone" className="text-foreground font-semibold">
+                WhatsApp Number *
               </Label>
-              <Input
-                id="whatsapp"
-                name="whatsapp"
-                type="tel"
-                placeholder="+1 234 567 8900"
-                required
-                className="bg-background/50 border-primary/20 focus:border-primary transition-colors"
-              />
+              <div className="flex gap-2">
+                <Select name="countryCode" required>
+                  <SelectTrigger className="w-[140px] bg-background/50 border-primary/20 focus:border-primary transition-colors">
+                    <SelectValue placeholder="Country" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-card border-primary/20 max-h-[300px]">
+                    <SelectItem value="+1">🇺🇸 +1 (US)</SelectItem>
+                    <SelectItem value="+44">🇬🇧 +44 (UK)</SelectItem>
+                    <SelectItem value="+91">🇮🇳 +91 (India)</SelectItem>
+                    <SelectItem value="+86">🇨🇳 +86 (China)</SelectItem>
+                    <SelectItem value="+81">🇯🇵 +81 (Japan)</SelectItem>
+                    <SelectItem value="+49">🇩🇪 +49 (Germany)</SelectItem>
+                    <SelectItem value="+33">🇫🇷 +33 (France)</SelectItem>
+                    <SelectItem value="+39">🇮🇹 +39 (Italy)</SelectItem>
+                    <SelectItem value="+34">🇪🇸 +34 (Spain)</SelectItem>
+                    <SelectItem value="+7">🇷🇺 +7 (Russia)</SelectItem>
+                    <SelectItem value="+52">🇲🇽 +52 (Mexico)</SelectItem>
+                    <SelectItem value="+55">🇧🇷 +55 (Brazil)</SelectItem>
+                    <SelectItem value="+61">🇦🇺 +61 (Australia)</SelectItem>
+                    <SelectItem value="+82">🇰🇷 +82 (S. Korea)</SelectItem>
+                    <SelectItem value="+971">🇦🇪 +971 (UAE)</SelectItem>
+                    <SelectItem value="+966">🇸🇦 +966 (Saudi)</SelectItem>
+                    <SelectItem value="+65">🇸🇬 +65 (Singapore)</SelectItem>
+                    <SelectItem value="+60">🇲🇾 +60 (Malaysia)</SelectItem>
+                    <SelectItem value="+63">🇵🇭 +63 (Philippines)</SelectItem>
+                    <SelectItem value="+66">🇹🇭 +66 (Thailand)</SelectItem>
+                    <SelectItem value="+27">🇿🇦 +27 (S. Africa)</SelectItem>
+                    <SelectItem value="+20">🇪🇬 +20 (Egypt)</SelectItem>
+                    <SelectItem value="+234">🇳🇬 +234 (Nigeria)</SelectItem>
+                    <SelectItem value="+254">🇰🇪 +254 (Kenya)</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="123 456 7890"
+                  required
+                  className="flex-1 bg-background/50 border-primary/20 focus:border-primary transition-colors"
+                />
+              </div>
             </div>
 
             {/* Service Selection */}

@@ -19,7 +19,14 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="fulsuccess" className="h-12" />
+              <img 
+                src="/logo.png" 
+                alt="fulsuccess" 
+                className="h-12 brightness-0 invert"
+              />
+              <span className="text-2xl font-orbitron font-bold text-gradient-primary">
+                fulsuccess
+              </span>
             </div>
             
             <p className="text-muted-foreground leading-relaxed">
