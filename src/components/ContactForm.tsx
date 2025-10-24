@@ -11,7 +11,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Send } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Send, Calendar } from "lucide-react";
 
 const services = [
   "Social Media Ads Creation",
@@ -27,10 +34,33 @@ const services = [
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [consentChecked, setConsentChecked] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsSubmitting(true);
-    // Let the form submit naturally to Formspree
+    
+    const form = e.currentTarget;
+    
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        form.reset();
+        setConsentChecked(false);
+        setShowSuccessDialog(true);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -198,6 +228,37 @@ const ContactForm = () => {
           </form>
         </div>
       </div>
+
+      {/* Success Dialog */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="bg-card/95 backdrop-blur-xl border-primary/30 shadow-[0_0_40px_hsl(var(--primary)/0.3)] max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-orbitron font-bold text-gradient-primary text-center">
+              Thank You! 🎉
+            </DialogTitle>
+            <DialogDescription className="text-center text-foreground pt-4 pb-6 text-base">
+              Thank you for sharing your details! We'll get back to you shortly.
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="flex justify-center pt-2 pb-4">
+            <Button
+              asChild
+              className="btn-neural px-8 py-6 text-base font-semibold shadow-[0_0_30px_hsl(var(--secondary)/0.4)] hover:shadow-[0_0_40px_hsl(var(--secondary)/0.6)]"
+            >
+              <a
+                href="https://calendly.com/krishnangovindan/ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Calendar className="w-5 h-5" />
+                Book Your Free Consultation Call
+              </a>
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
