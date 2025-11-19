@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 
-const solutions = [
+export const solutions = [
   {
     icon: Share2,
     title: "Social Media Ads Creation",
