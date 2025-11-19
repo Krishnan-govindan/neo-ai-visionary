@@ -64,7 +64,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

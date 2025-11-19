@@ -90,7 +90,7 @@ const Solutions = () => {
   const [selectedSolution, setSelectedSolution] = useState<typeof solutions[0] | null>(null);
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="solutions" className="py-24 relative overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
