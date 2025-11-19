@@ -3,7 +3,7 @@ import aboutImage from "@/assets/human-ai-collaboration.jpg";
 
 const About = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="about" className="py-24 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-0 w-1/2 h-1/2 bg-gradient-to-r from-primary/5 to-transparent blur-3xl" />
