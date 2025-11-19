@@ -1,7 +1,45 @@
-import { Linkedin, Youtube, Instagram, Calendar, Mail } from "lucide-react";
+import { Linkedin, Calendar, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { useState } from "react";
+import { solutions } from "@/components/Solutions";
 
 const Footer = () => {
+  const [selectedSolution, setSelectedSolution] = useState<typeof solutions[0] | null>(null);
+
+  // Map footer service names to solution titles
+  const serviceMapping: { [key: string]: string } = {
+    "Social Media Automation": "Social Media Automation",
+    "Website Creation": "Website Creation",
+    "AI Video Editing": "AI Video Editing",
+    "Blog Automation": "Blog Automation",
+    "Landing Pages": "Landing Page Creation",
+    "AI Brand Clone": "AI Clone for Your Brand",
+    "Chatbot Building": "Chatbot Building"
+  };
+
+  const handleServiceClick = (serviceName: string) => {
+    const solutionTitle = serviceMapping[serviceName];
+    const solution = solutions.find(s => s.title === solutionTitle);
+    if (solution) {
+      setSelectedSolution(solution);
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <footer className="bg-card/30 backdrop-blur-lg border-t border-primary/20 relative overflow-hidden">
       {/* Background Effects */}
@@ -57,7 +95,8 @@ const Footer = () => {
                 <li key={index}>
                   <a 
                     href={`#${link.toLowerCase()}`}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-2 inline-block"
+                    onClick={(e) => handleNavClick(e, link.toLowerCase())}
+                    className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-2 inline-block cursor-pointer"
                   >
                     {link}
                   </a>
@@ -82,9 +121,12 @@ const Footer = () => {
                 'Chatbot Building'
               ].map((service, index) => (
                 <li key={index}>
-                  <span className="text-muted-foreground hover:text-secondary transition-colors duration-300">
+                  <button
+                    onClick={() => handleServiceClick(service)}
+                    className="text-muted-foreground hover:text-secondary transition-colors duration-300 cursor-pointer text-left"
+                  >
                     {service}
-                  </span>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -99,11 +141,11 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="mailto:contact@fulsuccess.com"
+                href="mailto:coachkrishnangovindan@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 <Mail className="w-4 h-4" />
-                <span className="text-sm">contact@fulsuccess.com</span>
+                <span className="text-sm">coachkrishnangovindan@gmail.com</span>
               </a>
             </div>
 
@@ -158,6 +200,39 @@ const Footer = () => {
 
       {/* Glow Effect */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" />
+
+      {/* Solution Details Dialog */}
+      <Dialog open={!!selectedSolution} onOpenChange={() => setSelectedSolution(null)}>
+        <DialogContent className="sm:max-w-[600px] bg-card/95 backdrop-blur-lg border-primary/20">
+          <DialogHeader>
+            <div className="flex items-center gap-4 mb-4">
+              {selectedSolution && (
+                <div className="p-3 rounded-lg bg-primary/10">
+                  <selectedSolution.icon className="w-8 h-8 text-primary" />
+                </div>
+              )}
+              <DialogTitle className="text-2xl font-orbitron">
+                {selectedSolution?.title}
+              </DialogTitle>
+            </div>
+            <DialogDescription className="text-base leading-relaxed text-foreground/80">
+              {selectedSolution?.detailedDescription}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-6">
+            <Button asChild className="w-full btn-neural">
+              <a 
+                href="https://calendly.com/krishnangovindan/ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Calendar className="w-4 h-4 mr-2" />
+                Schedule a Consultation
+              </a>
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </footer>
   );
 };
