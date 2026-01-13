@@ -86,7 +86,7 @@ const Hero = () => {
             className="btn-ai-primary text-lg px-12 py-6 group-hover:shadow-[0_0_60px_hsl(var(--primary)/0.8)]"
           >
             <a 
-              href="https://calendly.com/krishnangovindan/ai" 
+              href="https://calendly.com/fulsuccess/ai" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-3"

@@ -185,7 +185,7 @@ const Solutions = () => {
           </p>
           <Button asChild className="btn-ai-secondary">
             <a 
-              href="https://calendly.com/krishnangovindan/ai" 
+              href="https://calendly.com/fulsuccess/ai"
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-3"
@@ -226,7 +226,7 @@ const Solutions = () => {
           <div className="mt-6 flex justify-center">
             <Button asChild className="btn-ai-secondary">
               <a 
-                href="https://calendly.com/krishnangovindan/ai" 
+                href="https://calendly.com/fulsuccess/ai" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3"

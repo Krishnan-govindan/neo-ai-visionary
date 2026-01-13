@@ -74,7 +74,7 @@ const Footer = () => {
             {/* CTA Button */}
             <Button asChild className="btn-neural">
               <a 
-                href="https://calendly.com/krishnangovindan/ai" 
+                href="https://calendly.com/fulsuccess/ai"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
@@ -187,7 +187,7 @@ const Footer = () => {
             <a href="#" className="hover:text-primary transition-colors duration-300">Terms of Service</a>
             <Button asChild variant="ghost" size="sm" className="text-xs">
               <a 
-                href="https://calendly.com/krishnangovindan/ai" 
+                href="https://calendly.com/fulsuccess/ai"
                 target="_blank" 
                 rel="noopener noreferrer"
               >
@@ -222,7 +222,7 @@ const Footer = () => {
           <div className="mt-6">
             <Button asChild className="w-full btn-neural">
               <a 
-                href="https://calendly.com/krishnangovindan/ai" 
+                href="https://calendly.com/fulsuccess/ai" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >

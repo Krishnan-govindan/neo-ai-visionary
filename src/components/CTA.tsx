@@ -77,7 +77,7 @@ const CTA = () => {
               className="btn-ai-primary text-xl px-16 py-8 group-hover:shadow-[0_0_80px_hsl(var(--primary)/0.8)]"
             >
               <a 
-                href="https://calendly.com/krishnangovindan/ai" 
+                href="https://calendly.com/fulsuccess/ai" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-4"
