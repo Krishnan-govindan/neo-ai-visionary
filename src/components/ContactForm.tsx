@@ -247,7 +247,7 @@ const ContactForm = () => {
               className="btn-neural px-8 py-6 text-base font-semibold shadow-[0_0_30px_hsl(var(--secondary)/0.4)] hover:shadow-[0_0_40px_hsl(var(--secondary)/0.6)]"
             >
               <a
-                href="https://calendly.com/krishnangovindan/ai"
+                href="https://calendly.com/fulsuccess/ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
